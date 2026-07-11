@@ -22,12 +22,12 @@ files_updated = 0
 html_files = glob.glob(os.path.join(directory, '**/*.html'), recursive=True)
 
 for file_path in html_files:
-    with open(file_path, 'r', encoding='utf-8') as f:
+    with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
         content = f.read()
     
     if old_nav in content:
         content = content.replace(old_nav, new_nav)
-        with open(file_path, 'w', encoding='utf-8') as f:
+        with open(file_path, 'w', encoding='utf-8', errors='ignore') as f:
             f.write(content)
         files_updated += 1
     elif new_nav in content:
