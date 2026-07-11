@@ -51,10 +51,10 @@ def generate_country_html(country, currency, min_cost, max_cost):
     import re
     curr_header = re.sub(r'<title>.*?</title>', f'<title>{title} | Pet Insurance Rates</title>', header_part)
     curr_header = re.sub(r'<meta name="description" content=".*?">', f'<meta name="description" content="{desc}">', curr_header)
-    curr_header = re.sub(r'<link rel="canonical" href=".*?">', f'<link rel="canonical" href="https://petinsurance.bongshai.com/articles/{slug}/">', curr_header)
+    curr_header = re.sub(r'<link rel="canonical" href=".*?">', f'<link rel="canonical" href="https://insurance1.bongshai.com/articles/{slug}/">', curr_header)
     curr_header = re.sub(r'<meta property="og:title" content=".*?">', f'<meta property="og:title" content="{title}">', curr_header)
     curr_header = re.sub(r'<meta property="og:description" content=".*?">', f'<meta property="og:description" content="{desc}">', curr_header)
-    curr_header = re.sub(r'<meta property="og:url" content=".*?">', f'<meta property="og:url" content="https://petinsurance.bongshai.com/articles/{slug}/">', curr_header)
+    curr_header = re.sub(r'<meta property="og:url" content=".*?">', f'<meta property="og:url" content="https://insurance1.bongshai.com/articles/{slug}/">', curr_header)
     
     article_content = f"""<article class="container mt-lg mb-xl prose"><header class="mb-lg"><h1 style="margin-bottom: var(--spacing-sm);">{title}</h1><p class="text-muted">By {author} | Last updated: July 11, 2026</p></header><div class="content"><p>If you live in {country}, you already know that the cost of living can vary significantly—and veterinary care is no exception. Pet insurance is one of the best ways to protect your finances from unexpected vet bills.</p>
 <p><img src="{image}" alt="Happy pet in {country}"></p>

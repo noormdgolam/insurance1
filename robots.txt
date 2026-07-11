@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://petinsurance.bongshai.com/sitemap-index.xml
+Sitemap: https://insurance1.bongshai.com/sitemap.xml
