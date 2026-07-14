@@ -3,7 +3,7 @@ import glob
 import json
 import re
 
-directory = "e:/Adsense sites/1/petinsurance-pure-html"
+directory = "e:/Adsense sites/1-10/1/petinsurance-pure-html"
 index_data = []
 
 html_files = glob.glob(os.path.join(directory, '**/*.html'), recursive=True)

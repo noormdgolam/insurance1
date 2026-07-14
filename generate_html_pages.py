@@ -29,6 +29,34 @@ def generate_html(breed, ptype):
     author = random.choice(authors)
     cost = random.randint(60, 110) if ptype == "dogs" else random.randint(35, 65)
     
+    spin_intros = [
+        f"<p>Investing in pet insurance early is the best way to ensure your {breed} receives top-tier medical care throughout their life.</p>",
+        f"<p>As a devoted pet parent, securing comprehensive insurance for your {breed} is a crucial step in safeguarding their long-term health and your financial stability.</p>",
+        f"<p>Protecting your {breed} with a robust insurance policy means you'll never have to choose between your wallet and your furry friend's well-being.</p>"
+    ]
+    
+    spin_costs = [
+        f"""<h2 id="average-insurance-cost-for-a-breed">Average Insurance Cost for a {breed}</h2>
+<p>The average monthly premium to insure a {breed} ranges from <strong>${cost - 15} to ${cost + 20}</strong>, depending on your location, the pet's age, and your chosen deductible.</p>""",
+        f"""<h2 id="average-insurance-cost-for-a-breed">What Does It Cost to Insure a {breed}?</h2>
+<p>Expect to pay between <strong>${cost - 15} and ${cost + 20}</strong> per month for {breed} insurance. Keep in mind that urban areas and lower deductibles will push your premium toward the higher end.</p>""",
+        f"""<h2 id="average-insurance-cost-for-a-breed">{breed} Insurance Pricing Guide</h2>
+<p>On average, comprehensive coverage for a {breed} sits around <strong>${cost - 15} to ${cost + 20}</strong> monthly. The exact rate fluctuates based on the provider and the age of enrollment.</p>"""
+    ]
+    
+    spin_reasons = [
+        f"""<h3 id="why-is-insuring-a-breed-this-price">Why is insuring a {breed} this price?</h3>
+<p>Insurance providers base their premiums on historical claims data. For a {breed}, specific genetic predispositions play a major role in calculating risk.</p>""",
+        f"""<h3 id="why-is-insuring-a-breed-this-price">Understanding Your {breed}'s Premium</h3>
+<p>Actuaries calculate pet insurance rates using decades of veterinary data. The specific hereditary vulnerabilities of the {breed} directly influence these baseline costs.</p>""",
+        f"""<h3 id="why-is-insuring-a-breed-this-price">Why Does {breed} Coverage Cost This Much?</h3>
+<p>Every breed carries its own unique risk profile. For the {breed}, insurers factor in the statistical likelihood of treating common genetic conditions when setting their monthly rates.</p>"""
+    ]
+    
+    intro_text = random.choice(spin_intros)
+    cost_text = random.choice(spin_costs)
+    reason_text = random.choice(spin_reasons)
+    
     html_content = f"""<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- SEO Meta Tags --><title>{title} | Pet Insurance Rates</title><meta name="description" content="{desc}"><link rel="canonical" href="https://insurance1.bongshai.com/articles/{slug}/"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://insurance1.bongshai.com/articles/{slug}/"><meta property="og:title" content="{title}"><meta property="og:description" content="{desc}"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://insurance1.bongshai.com/articles/{slug}/"><meta property="twitter:title" content="{title}"><meta property="twitter:description" content="{desc}"><!-- Google Search Console Placeholder --><meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE"><!-- GA4 Tracking Code Placeholder --><!-- Google tag (gtag.js) --><!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -38,11 +66,9 @@ def generate_html(breed, ptype):
     </script> --><link rel="stylesheet" href="/_astro/BaseLayout.Ci-oW-RR.css"><style>.format-leaderboard[data-astro-cid-fnsbmqs7]{{width:100%;max-width:728px;height:90px;margin:1rem auto}}.format-rectangle[data-astro-cid-fnsbmqs7]{{width:300px;height:250px;margin:1rem auto}}.format-in-article[data-astro-cid-fnsbmqs7]{{width:100%;min-height:100px}}
 </style></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="container flex justify-between items-center" data-astro-cid-nen7h5rs><a href="/" class="logo" style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary);" data-astro-cid-nen7h5rs>Pet Insurance Rates</a><nav class="desktop-nav" aria-label="Main Navigation" data-astro-cid-nen7h5rs><ul class="flex gap-md" style="list-style: none;" data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="/" class="nav-link" data-astro-cid-nen7h5rs>Home</a></li><li data-astro-cid-nen7h5rs><a href="/articles" class="nav-link" data-astro-cid-nen7h5rs>Articles</a></li><li data-astro-cid-nen7h5rs><a href="/about" class="nav-link" data-astro-cid-nen7h5rs>About</a></li><li data-astro-cid-nen7h5rs><a href="/contact" class="nav-link" data-astro-cid-nen7h5rs>Contact</a></li></ul></nav><!-- Mobile Nav Toggle --><button class="mobile-nav-toggle btn-outline" aria-label="Toggle Menu" style="display: none;" data-astro-cid-nen7h5rs>Menu</button></div></header><main><article class="container mt-lg mb-xl prose"><header class="mb-lg"><h1 style="margin-bottom: var(--spacing-sm);">{title}</h1><p class="text-muted">By {author} | Last updated: July 11, 2026</p></header><div class="content"><p>The {breed} is one of the most beloved pet breeds, known for their unique personality and charm. However, like many specific breeds, they are prone to certain hereditary health conditions that can result in expensive veterinary bills.</p>
 <p><img src="{image}" alt="{breed} resting comfortably"></p>
-<p>Investing in pet insurance early is the best way to ensure your {breed} receives top-tier medical care throughout their life.</p>
-<h2 id="average-insurance-cost-for-a-breed">Average Insurance Cost for a {breed}</h2>
-<p>The average monthly premium to insure a {breed} ranges from <strong>${cost - 15} to ${cost + 20}</strong>, depending on your location, the pet’s age, and your chosen deductible.</p>
-<h3 id="why-is-insuring-a-breed-this-price">Why is insuring a {breed} this price?</h3>
-<p>Insurance providers base their premiums on historical claims data. For a {breed}, specific genetic predispositions play a major role in calculating risk.</p>
+{intro_text}
+{cost_text}
+{reason_text}
 <h3 id="common-health-conditions">Common Health Conditions</h3>
 <p>When comparing policies, ensure they cover the following conditions common to the {breed}:</p>
 <ul>

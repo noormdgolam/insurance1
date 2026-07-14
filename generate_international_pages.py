@@ -1,7 +1,7 @@
 import os
 import random
 
-output_dir = "e:/Adsense sites/1/petinsurance-pure-html/articles"
+output_dir = "e:/Adsense sites/1-10/1/petinsurance-pure-html/articles"
 
 countries = [
     ("United Kingdom", "£", 30, 60),
@@ -32,7 +32,7 @@ images = [
 authors = ["Jane Doe", "John Smith", "Emily Chen", "Michael Brown"]
 
 # We will read a base template from an existing file to ensure we get the full nav and search bar
-base_file = "e:/Adsense sites/1/petinsurance-pure-html/articles/pet-insurance-cost-texas/index.html"
+base_file = "e:/Adsense sites/1-10/1/petinsurance-pure-html/articles/pet-insurance-cost-texas/index.html"
 with open(base_file, 'r', encoding='utf-8', errors='ignore') as f:
     template = f.read()
 
@@ -56,11 +56,31 @@ def generate_country_html(country, currency, min_cost, max_cost):
     curr_header = re.sub(r'<meta property="og:description" content=".*?">', f'<meta property="og:description" content="{desc}">', curr_header)
     curr_header = re.sub(r'<meta property="og:url" content=".*?">', f'<meta property="og:url" content="https://insurance1.bongshai.com/articles/{slug}/">', curr_header)
     
-    article_content = f"""<article class="container mt-lg mb-xl prose"><header class="mb-lg"><h1 style="margin-bottom: var(--spacing-sm);">{title}</h1><p class="text-muted">By {author} | Last updated: July 11, 2026</p></header><div class="content"><p>If you live in {country}, you already know that the cost of living can vary significantly—and veterinary care is no exception. Pet insurance is one of the best ways to protect your finances from unexpected vet bills.</p>
+    import random
+    
+    spin_intros = [
+        f"<p>If you live in {country}, you already know that the cost of living can vary significantly-and veterinary care is no exception. Pet insurance is one of the best ways to protect your finances from unexpected vet bills.</p>",
+        f"<p>Navigating the veterinary landscape in {country} can be daunting. As costs continue to rise, securing a reliable pet insurance policy has never been more important for responsible pet owners.</p>",
+        f"<p>Protecting your furry companion in {country} means planning for the unexpected. With vet costs soaring, pet insurance offers a vital safety net for your family's finances.</p>"
+    ]
+    
+    spin_costs = [
+        f"""<h2 id="average-cost-of-pet-insurance-in-country">Average Cost of Pet Insurance in {country}</h2>
+<p>In {country}, the average monthly premium for pet insurance is typically around <strong>{currency}{max_cost} for dogs</strong> and <strong>{currency}{min_cost} for cats</strong>. However, rates vary significantly based on your exact location, the breed of your pet, and the level of coverage you choose.</p>""",
+        f"""<h2 id="average-cost-of-pet-insurance-in-country">How Much Should You Expect to Pay in {country}?</h2>
+<p>Generally, pet parents in {country} can expect to pay roughly <strong>{currency}{max_cost} monthly for dogs</strong> and <strong>{currency}{min_cost} for cats</strong>. Remember that these are averages; your specific premium will depend on your pet's age and your local postal code.</p>""",
+        f"""<h2 id="average-cost-of-pet-insurance-in-country">{country} Pet Insurance Pricing Guide</h2>
+<p>While prices fluctuate, standard monthly policies in {country} hover around <strong>{currency}{max_cost} for dogs</strong> and <strong>{currency}{min_cost} for cats</strong>. Comprehensive plans with low deductibles will naturally push these averages higher.</p>"""
+    ]
+    
+    intro_text = random.choice(spin_intros)
+    cost_text = random.choice(spin_costs)
+    
+    article_content = f"""<article class="container mt-lg mb-xl prose"><header class="mb-lg"><h1 style="margin-bottom: var(--spacing-sm);">{title}</h1><p class="text-muted">By {author} | Last updated: July 11, 2026</p></header><div class="content">
+{intro_text}
 <p><img src="{image}" alt="Happy pet in {country}"></p>
 <p>But exactly how much does pet insurance cost in {country}?</p>
-<h2 id="average-cost-of-pet-insurance-in-country">Average Cost of Pet Insurance in {country}</h2>
-<p>In {country}, the average monthly premium for pet insurance is typically around <strong>{currency}{max_cost} for dogs</strong> and <strong>{currency}{min_cost} for cats</strong>. However, rates vary significantly based on your exact location, the breed of your pet, and the level of coverage you choose.</p>
+{cost_text}
 <h3 id="factors-influencing-your-premium">Factors Influencing Your Premium</h3>
 <ol>
 <li><strong>Location:</strong> Vet costs in major metropolitan areas are higher than in rural parts of {country}. Insurance providers adjust premiums to reflect local veterinary costs.</li>

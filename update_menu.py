@@ -15,7 +15,7 @@ new_nav = """<style>
 </style>
 <nav class="desktop-nav" aria-label="Main Navigation" data-astro-cid-nen7h5rs><ul class="flex gap-md" style="list-style: none; align-items: center;" data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="/" class="nav-link" data-astro-cid-nen7h5rs>Home</a></li><li class="dropdown" data-astro-cid-nen7h5rs><a href="/articles" class="nav-link" data-astro-cid-nen7h5rs style="padding-bottom: 1.5rem;">Articles &#9662;</a><div class="dropdown-content"><a href="/articles">All Articles</a><a href="/articles/pet-insurance-cost-texas">State Guides</a><a href="/articles/french-bulldog-insurance-cost">Breed Guides</a></div></li><li data-astro-cid-nen7h5rs><a href="/about" class="nav-link" data-astro-cid-nen7h5rs>About</a></li><li data-astro-cid-nen7h5rs><a href="/contact" class="nav-link" data-astro-cid-nen7h5rs>Contact</a></li></ul></nav>"""
 
-directory = "e:/Adsense sites/1/petinsurance-pure-html"
+directory = "e:/Adsense sites/1-10/1/petinsurance-pure-html"
 files_updated = 0
 
 # Recursively find all HTML files

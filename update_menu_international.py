@@ -1,7 +1,7 @@
 import os
 import glob
 
-directory = "e:/Adsense sites/1/petinsurance-pure-html"
+directory = "e:/Adsense sites/1-10/1/petinsurance-pure-html"
 files_updated = 0
 
 html_files = glob.glob(os.path.join(directory, '**/*.html'), recursive=True)
